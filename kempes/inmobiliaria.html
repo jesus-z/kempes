@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inmobiliaria NOVAVISTA</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="main-content">
+    <header data-aos="fade-in">
+      <h1>Inmobiliaria NOVAVISTA</h1>
+      <p>Encuentra tu hogar ideal hoy mismo</p>
+    </header>
+
+    <nav>
+      <a href="#venta">Venta</a>
+      <a href="#alquiler">Alquiler</a>
+      <a href="#anticretico">Anticrético</a>
+      <a href="#agentes">Agentes</a>
+      <a href="#login">Login</a>
+    </nav>
+
+    <div class="container">
+      <div class="filter"  data-aos="fade-up">
+        <select>
+          <option disabled selected>Tipo de propiedad</option>
+          <option>Departamento</option>
+          <option>Lote</option>
+          <option>Casa</option>
+          <option>Hacienda</option>
+          <option>Garzonier</option>
+          <option>Monoambiente</option>
+          <option>Edificio</option>
+          <option>Otro</option>
+        </select>
+        <select>
+          <option disabled selected>Zona</option>
+          <option>Central</option>
+          <option>Campesino</option>
+          <option>Alto Delicias</option>
+          <option>Morro</option>
+        </select>
+        <select>
+          <option disabled selected>Estado</option>
+          <option>Disponible</option>
+          <option>No disponible</option>
+          <option>Con reserva</option>
+        </select> <button onclick="filtrarPropiedades()" style="padding: 0.75rem 1.5rem; background-color: #fbbf24; border: none; border-radius: 6px; font-weight: bold; cursor: pointer;">Buscar</button>
+
+      </div>
+
+      <section id="venta" class="property" data-aos="fade-up" style="display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: flex-start;">
+        <img src="alq2.jpg" alt="Casa" style="flex: 1 1 45%; max-width: 45%; height: auto; border-radius: 10px;">
+        <div class="property-content" style="flex: 1 1 50%;">
+          <h2>Casa en Venta - Zona Central</h2>
+          <video src="casavideo.mp4" controls style="width: 100%; max-width: 100%; margin: 1rem 0;"></video>
+          <p>Hermosa casa de 3 pisos con jardín, ubicada en el centro de la ciudad. Ideal para familias.</p>
+          <a href="#">Descargar información</a>
+        </div>
+      </section>
+
+      <section id="alquiler" class="property" data-aos="fade-up" style="display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: flex-start;">
+        <img src="casa2.jpeg" alt="Departamento" style="flex: 1 1 45%; max-width: 45%; height: auto; border-radius: 10px;">
+        <div class="property-content" style="flex: 1 1 50%;">
+          <h2>Departamento en Alquiler - Alto Delicias</h2>
+          <p>Departamento moderno con 2 habitaciones, 1 baño y cocina equipada. Excelente vista.</p>
+          <a href="#">Descargar información</a>
+        </div>
+      </section>
+
+      <section id="anticretico" class="property" data-aos="fade-up" style="display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: flex-start;">
+        <img src="casa3.jpeg" alt="Monoambiente" style="flex: 1 1 45%; max-width: 45%; height: auto; border-radius: 10px;">
+        <div class="property-content" style="flex: 1 1 50%;">
+          <h2>Monoambiente en Anticrético - Campesino</h2>
+          <p>Ideal para estudiantes o parejas. Con acceso a transporte público.</p>
+          <a href="#">Descargar información</a>
+        </div>
+      </section>
+
+      <section id="agentes" class="agents" data-aos="fade-up">
+        <h2>Nuestros Agentes</h2>
+        <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 2rem;">
+          <div class="agent" style="text-align: center; width: 300px; background: #4e85f3; padding: 2rem 1rem; border-left: 4px solid #fbbf24; border-radius: 12px;">
+            <img src="a1.jpg" alt="Juan Pérez" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 12px; margin-bottom: 1rem;">
+            <h3 style="color: white;">Juan Pérez</h3>
+            <p style="color: white;">Especialista en venta de lotes y casas. Con más de 10 años de experiencia en el rubro.</p>
+          </div>
+          <div class="agent" style="text-align: center; width: 300px; background: #4e85f3; padding: 2rem 1rem; border-left: 4px solid #fbbf24; border-radius: 12px;">
+            <img src="a2.jpg" alt="Mario López" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 12px; margin-bottom: 1rem;">
+            <h3 style="color: white;">Mario López</h3>
+            <p style="color: white;">Asesor en alquileres y anticréticos. Atención personalizada y rápida gestión.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3>Inmobiliaria NOVAVISTA</h3>
+        <p>Encuentra tu hogar ideal con nosotros. Ofrecemos las mejores opciones en venta, alquiler y anticrético.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Enlaces</h4>
+        <ul>
+          <li><a href="#venta">Venta</a></li>
+          <li><a href="#alquiler">Alquiler</a></li>
+          <li><a href="#anticretico">Anticrético</a></li>
+          <li><a href="#agentes">Agentes</a></li>
+          <li><a href="#login">Login</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <p>Email: contacto@novavista.com</p>
+        <p>Tel: +591 789-45612</p>
+        <div class="socials">
+          <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/59178945612" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Inmobiliaria NOVAVISTA. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+<script>
+  function filtrarPropiedades() {
+    const tipo = document.querySelectorAll('.filter select')[0].value;
+    const zona = document.querySelectorAll('.filter select')[1].value;
+    const estado = document.querySelectorAll('.filter select')[2].value;
+
+    if (!tipo || !zona || !estado || tipo === "Tipo de propiedad" || zona === "Zona" || estado === "Estado") {
+      alert("Por favor selecciona todas las opciones para buscar.");
+      return;
+    }
+
+    // Formato URL: propiedades.html?tipo=Casa&zona=Central&estado=Disponible
+    const url = `propiedades.html?tipo=${encodeURIComponent(tipo)}&zona=${encodeURIComponent(zona)}&estado=${encodeURIComponent(estado)}`;
+    window.location.href = url;
+  }
+</script>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    AOS.init();
+    const swiper = new Swiper('.swiper-container', {
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination'
+      },
+      autoplay: {
+        delay: 3000
+      }
+    });
+  </script>
+</body>
+</html>

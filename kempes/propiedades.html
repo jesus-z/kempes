@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resultados de Búsqueda - NOVAVISTA</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .results {
+      max-width: 1200px;
+      margin: auto;
+      padding: 2rem;
+    }
+    .results h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .property-card {
+      background: #262626;
+      color: #fbbf24;
+      padding: 1rem;
+      border-radius: 12px;
+      margin-bottom: 1.5rem;
+    }
+    .property-card h2 {
+      color: #ffffff;
+    }
+    .property-card img {
+      width: 100%;
+      max-height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="results">
+    <h1>Resultados de Búsqueda</h1>
+    <div id="resultado"></div>
+  </div>
+
+  <script>
+    const tipos = ["Departamento", "Lote", "Casa", "Hacienda", "Garzonier", "Monoambiente", "Edificio"];
+    const zonas = ["Central", "Campesino", "Alto Delicias", "Morro"];
+
+    const propiedades = [];
+
+    tipos.forEach(tipo => {
+      zonas.forEach(zona => {
+        for (let i = 1; i <= 3; i++) {
+          propiedades.push({
+            tipo: tipo,
+            zona: zona,
+            estado: "Disponible",
+            titulo: `${tipo} en ${zona} #${i}`,
+            imagen: `${tipo.toLowerCase()}_${zona.toLowerCase().replace(/\s+/g, '_')}_${i}.jpg`
+          });
+        }
+      });
+    });
+
+    const params = new URLSearchParams(window.location.search);
+    const tipo = params.get("tipo");
+    const zona = params.get("zona");
+    const estado = params.get("estado");
+
+    const resultadoDiv = document.getElementById("resultado");
+    const resultadosFiltrados = propiedades.filter(p =>
+      p.tipo === tipo && p.zona === zona && p.estado === estado
+    );
+
+    if (resultadosFiltrados.length > 0) {
+      resultadosFiltrados.forEach(p => {
+        const card = document.createElement("div");
+        card.className = "property-card";
+        card.innerHTML = `
+          <img src="${p.imagen}" alt="${p.titulo}">
+          <h2>${p.titulo}</h2>
+          <p><strong>Tipo:</strong> ${p.tipo}</p>
+          <p><strong>Zona:</strong> ${p.zona}</p>
+          <p><strong>Estado:</strong> ${p.estado}</p>
+        `;
+        resultadoDiv.appendChild(card);
+      });
+    } else {
+      resultadoDiv.innerHTML = `<p style="text-align:center">No se encontraron propiedades con los filtros seleccionados.</p>`;
+    }
+  </script>
+</body>
+</html>
